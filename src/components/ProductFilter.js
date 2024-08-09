@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { FMultiCheckbox, FRadioGroup } from "../form";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
-
+import { useState } from "react";
 export const SORT_BY_OPTIONS = [
     { value: "featured", label: "Featured" },
     { value: "newest", label: "Newest" },
@@ -24,7 +24,22 @@ export const FILTER_PRICE_OPTIONS = [
     { value: "above", label: "Above $75" },
 ];
 
-function ProductFilter({ resetFilter }) {
+
+
+function ProductFilter() {
+
+    const initialFilterState = {
+        gender: [],
+        category: "",
+        priceRange: "",
+    };
+
+    const [filters, setFilters] = useState(initialFilterState);
+
+
+    const resetFilter = () => {
+        setFilters(initialFilterState);
+    };
     return (
         <Stack spacing={3} sx={{ p: 3, width: 250 }}>
             <Stack spacing={1}>
