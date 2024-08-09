@@ -27,7 +27,6 @@ export const FILTER_PRICE_OPTIONS = [
 
 
 function ProductFilter() {
-
     const initialFilterState = {
         gender: [],
         category: "",
@@ -35,11 +34,11 @@ function ProductFilter() {
     };
 
     const [filters, setFilters] = useState(initialFilterState);
-
-
+    console.log(filters);
     const resetFilter = () => {
         setFilters(initialFilterState);
     };
+
     return (
         <Stack spacing={3} sx={{ p: 3, width: 250 }}>
             <Stack spacing={1}>
